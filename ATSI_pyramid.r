@@ -1,22 +1,15 @@
 library(tidyverse)
 library(readxl)   
 library(plotly)   
-library(yaml)     
-library(progress) 
-library(labeling) 
-library(fansi)    
-library(utf8)     
 library(openxlsx) 
 library(caTools)  
 library(gganimate)
 library(gifski)   
 library(png)      
 library(digest)   
-library(crosstalk)
 library(ggthemes) 
 library(magick)   
 library(rematch)  
-
 
 sexcol <- c("#336699", "#C0504D")
 
@@ -24,16 +17,12 @@ sexcol <- c("#336699", "#C0504D")
 col <-"#F8F8F8"
 
 # Source dataset:
-path <- "//Corp/Peopledfs/atyepa/An R folder/ATSI_ERP_1971_2016.xlsx"
-
 #--- Read in data ---
-daturl <- "https://github.com/Atyepa/YBFS/raw/main/Assembled_YBFS_28072021.xlsx"
-download.file(daturl,"Assembled_YBFS_28072021.xlsx", mode = "wb" )
+daturl <- "https://github.com/Atyepa/Population-pyramids/blob/master/ATSI_ERP_1971_2016.xlsx"
+download.file(daturl,"ATSI_ERP_1971_2016.xlsx", mode = "wb" )
 
 #--- Read in assembled data --
-data1 <- read.xlsx("Assembled_YBFS_28072021.xlsx")
-
-data <- read.xlsx(path)
+data <- read.xlsx("ATSI_ERP_1971_2016.xlsx")
 
 #--- Finesse data ---
 erp <- data %>% 
